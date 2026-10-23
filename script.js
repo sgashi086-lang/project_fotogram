@@ -8,18 +8,18 @@ const NAVIGATE_PREVIOUS = -1;
 const NAVIGATE_NEXT = 1;
 
 const IMAGES_DATA = [
-  { src: "/images/wrangellStElias.jpg", alt: "A scenic mountain and glacier view of Wrangell-St. Elias National Park in Alaska.", caption: "Wrangell-St. Elias (Alaska)" },
-  { src: "/images/gatesOfTheArctic.jpg", alt: "Untouched wilderness with grand rivers and dramatic mountain peaks in Gates of the Arctic National Park in Alaska.", caption: "Gates of the Arctic (Alaska)" },
-  { src: "/images/denali.jpg", alt: "The snow-covered peak of Mount Denali rising above the vast autumn tundra in Denali National Park in Alaska.", caption: "Denali (Alaska)" },
-  { src: "/images/katmai.jpg", alt: "Wild brown bears catching salmon at a rushing waterfall in Katmai National Park in Alaska.", caption: "Katmai (Alaska)" },
-  { src: "/images/lakeClark.jpg", alt: "Turquoise alpine waters reflecting rugged mountain crags and glaciers in Lake Clark National Park in Alaska.", caption: "Lake Clark (Alaska)" },
-  { src: "/images/deathValley.jpg", alt: "Cracked salt flats stretching across the desert floor under a harsh sun in Death Valley National Park in California and Nevada.", caption: "Death Valley (Kalifornien, Nevada)" },
-  { src: "/images/glacierBay.jpg", alt: "Massive tidewater glaciers calving icebergs into the deep blue ocean waters of Glacier Bay National Park in Alaska.", caption: "Glacier Bay (Alaska)" },
-  { src: "/images/yellowstone.jpg", alt: "The brilliant rainbow-colored thermal rings of the Grand Prismatic Spring in Yellowstone National Park spanning Wyoming, Montana, and Idaho.", caption: "Yellowstone (Wyoming, Montana, Idaho)" },
-  { src: "/images/kobukValley.jpg", alt: "Surreal golden sand dunes framed by dark green boreal forests in Kobuk Valley National Park in Alaska.", caption: "Kobuk Valley (Alaska)" },
-  { src: "/images/everglades.jpg", alt: "Lush green sawgrass marshes and swamp mangroves stretching out under a clear sky in the Everglades National Park in Florida.", caption: "Everglades (Florida)" },
-  { src: "/images/grandCanyon.jpg", alt: "Layered deep red rock canyons carved by the winding river below during a golden sunset in Grand Canyon National Park in Arizona.", caption: "Grand Canyon (Arizona)" },
-  { src: "/images/glacier.jpg", alt: "A sharp alpine valley path lined with vibrant wildflowers leading up to steep glacial peaks in Glacier National Park in Montana.", caption: "Glacier (Montana)" }
+  { src: "./images/wrangellStElias.jpg", alt: "A scenic mountain and glacier view of Wrangell-St. Elias National Park in Alaska.", caption: "Wrangell-St. Elias (Alaska)" },
+  { src: "./images/gatesOfTheArctic.jpg", alt: "Untouched wilderness with grand rivers and dramatic mountain peaks in Gates of the Arctic National Park in Alaska.", caption: "Gates of the Arctic (Alaska)" },
+  { src: "./images/denali.jpg", alt: "The snow-covered peak of Mount Denali rising above the vast autumn tundra in Denali National Park in Alaska.", caption: "Denali (Alaska)" },
+  { src: "./images/katmai.jpg", alt: "Wild brown bears catching salmon at a rushing waterfall in Katmai National Park in Alaska.", caption: "Katmai (Alaska)" },
+  { src: "./images/lakeClark.jpg", alt: "Turquoise alpine waters reflecting rugged mountain crags and glaciers in Lake Clark National Park in Alaska.", caption: "Lake Clark (Alaska)" },
+  { src: "./images/deathValley.jpg", alt: "Cracked salt flats stretching across the desert floor under a harsh sun in Death Valley National Park in California and Nevada.", caption: "Death Valley (Nevada)" },
+  { src: "./images/glacierBay.jpg", alt: "Massive tidewater glaciers calving icebergs into the deep blue ocean waters of Glacier Bay National Park in Alaska.", caption: "Glacier Bay (Alaska)" },
+  { src: "./images/yellowstone.jpg", alt: "The brilliant rainbow-colored thermal rings of the Grand Prismatic Spring in Yellowstone National Park spanning Wyoming, Montana, and Idaho.", caption: "Yellowstone (Idaho)" },
+  { src: "./images/kobukValley.jpg", alt: "Surreal golden sand dunes framed by dark green boreal forests in Kobuk Valley National Park in Alaska.", caption: "Kobuk Valley (Alaska)" },
+  { src: "./images/everglades.jpg", alt: "Lush green sawgrass marshes and swamp mangroves stretching out under a clear sky in the Everglades National Park in Florida.", caption: "Everglades (Florida)" },
+  { src: "./images/grandCanyon.jpg", alt: "Layered deep red rock canyons carved by the winding river below during a golden sunset in Grand Canyon National Park in Arizona.", caption: "Grand Canyon (Arizona)" },
+  { src: "./images/glacier.jpg", alt: "A sharp alpine valley path lined with vibrant wildflowers leading up to steep glacial peaks in Glacier National Park in Montana.", caption: "Glacier (Montana)" }
 ];
 
 let currentImageIndex = 0;

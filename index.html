@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fotogram</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body onkeydown="handleGlobalKeyDown(event)">
   <header class="siteHeader">
     <div class="logoContainer">
-      <img class="logoIcon" src="/icons/fotogramLogo.svg" alt="Fotogram Logo Icon">
+      <img class="logoIcon" src="./icons/fotogramLogo.svg" alt="Fotogram Logo Icon">
       <span class="logoTitel">Fotogram</span>
     </div>
   </header>
@@ -31,25 +31,25 @@
       </div>
 
       <figure id="lightboxFigure" class="lightboxFigure">
-        <img id="lightboxImage" class="lightboxImage" src="/images/wrangellStElias.jpg" alt="A scenic mountain and glacier view of Wrangell-St. Elias National Park in Alaska.">
+        <img id="lightboxImage" class="lightboxImage" src="./images/wrangellStElias.jpg" alt="A scenic mountain and glacier view of Wrangell-St. Elias National Park in Alaska.">
       </figure>
 
       <div class="lightboxControls">
-        <button class="lightboxButton prevButton" onclick="navigateLightbox(-1)">←</button>
-        <span id="lightboxCounter" class="lightboxCounter">1 / 12</span>
-        <button class="lightboxButton nextButton" onclick="navigateLightbox(1)">→</button>
+        <button class="lightboxButton prevButton" onclick="navigateLightbox(-1)">⬅</button>
+        <span id="lightboxCounter" class="lightboxCounter">1/12</span>
+        <button class="lightboxButton nextButton" onclick="navigateLightbox(1)">⮕</button>
       </div>
     </div>
   </dialog>
 
   <footer class="siteFooter">
     <div class="footerContainer">
-      <img src="/icons/daLogo.svg" alt="Developer Akademie Logo" class="footerLogo">
+      <img src="./icons/daLogo.svg" alt="Developer Akademie Logo" class="footerLogo">
       <p class="copyrightText">&copy; 2026 Developer Akademie GmbH</p>
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
