@@ -26,9 +26,9 @@ let currentImageIndex = 0;
 
 function renderGalleryItem(image, index) {
   return `
-    <li class="galleryItem">
-      <figure class="galleryCard" onclick="openLightbox(${index})">
-        <img class="galleryThumbnail" src="${image.src}" alt="${image.alt}">
+    <li class="GalleryItem">
+      <figure class="GalleryCard" onclick="openLightbox(${index})">
+        <img class="GalleryThumbnail" src="${image.src}" alt="${image.alt}">
       </figure>
     </li>
   `;
@@ -53,49 +53,69 @@ function openLightbox(index) {
   currentImageIndex = index;
   updateLightboxContent();
   LIGHTBOX_DIALOG.showModal();
-  document.addEventListener("keydown", handleGlobalKeyDown);
+  
   LIGHTBOX_DIALOG.addEventListener("click", handleLightboxClick);
+  
+  document.getElementById("lightboxContent").addEventListener("click", function(event) {
+    event.stopPropagation();
+  });
+  
   document.getElementById("closeButton").focus();
 }
 
 function closeLightbox() {
-  LIGHTBOX_DIALOG.close();
-  document.removeEventListener("keydown", handleGlobalKeyDown);
-  LIGHTBOX_DIALOG.removeEventListener("click", handleLightboxClick);
-}
+      LIGHTBOX_DIALOG.close();
+      LIGHTBOX_DIALOG.removeEventListener("click", handleLightboxClick);
+    }
 
 function handleLightboxClick(event) {
-  if (event.target === LIGHTBOX_DIALOG) {
-    closeLightbox();
-  }
-}
+      if (event.target === LIGHTBOX_DIALOG) {
+        closeLightbox();
+      }
+    }
 
 function navigateLightbox(direction) {
-  currentImageIndex += direction;
-  if (currentImageIndex >= IMAGES_DATA.length) {
-    currentImageIndex = 0;
-  }
-  if (currentImageIndex < 0) {
-    currentImageIndex = IMAGES_DATA.length - 1;
-  }
-  updateLightboxContent();
-}
+      currentImageIndex += direction;
+      if (currentImageIndex >= IMAGES_DATA.length) {
+        currentImageIndex = 0;
+      }
+      if (currentImageIndex < 0) {
+        currentImageIndex = IMAGES_DATA.length - 1;
+      }
+      updateLightboxContent();
+    }
 
 function handleGlobalKeyDown(event) {
-  if (event.key === "ArrowLeft") {
-    event.preventDefault(); 
-    event.stopPropagation(); 
-    navigateLightbox(NAVIGATE_PREVIOUS);
-  }
-  if (event.key === "ArrowRight") {
-    event.preventDefault(); 
-    event.stopPropagation(); 
-    navigateLightbox(NAVIGATE_NEXT);
-  }
-}
+      if (!LIGHTBOX_DIALOG.open) return;
+
+      const prevButton = document.querySelector(".prevButton");
+      const nextButton = document.querySelector(".nextButton");
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        // event.stopPropagation(); 
+        navigateLightbox(NAVIGATE_PREVIOUS);
+
+        if (prevButton) {
+          prevButton.classList.add('is-active');
+          setTimeout(() => prevButton.classList.remove('is-active'), 150);
+        }
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        event.stopPropagation();
+        navigateLightbox(NAVIGATE_NEXT);
+
+        if (nextButton) {
+          nextButton.classList.add('is-active');
+          setTimeout(() => nextButton.classList.remove('is-active'), 150);
+        }
+      }
+    }
 
 function init() {
-  renderAllThumbnails();
-}
+      renderAllThumbnails();
+    }
 
 init();

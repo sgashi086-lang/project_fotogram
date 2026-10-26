@@ -43,8 +43,8 @@
 }
 
 :root {
-    --main-color: rgba(6, 23, 30, 1);
-    --secondary-color: rgba(9, 33, 42, 1);
+    --main-color: rgb(4, 16, 20);
+    --secondary-color: rgb(6, 24, 31);
 }
 
 * {
@@ -64,8 +64,8 @@ body {
     letter-spacing: 5px;
 }
 
-.siteHeader,
-.siteFooter {
+.SiteHeader,
+.SiteFooter {
     width: 100%;
     display: flex;
     padding: 16px max(80px, 50% - 720px) 16px;
@@ -73,34 +73,109 @@ body {
 
 }
 
-.logoContainer {
+.LogoContainer {
     justify-self: center;
 }
 
-.logoTitel {
-    font-size: 32px;
+.LogoContainer img {
+    width: 40px;
+}
+
+.LogoTitel {
+    font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
     font-weight: 800;
     color: white;
 }
 
-.lightboxOverlay {
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 max(50% - 585px);
+}
+
+.MainSection {
+    margin: 160px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.MainSection h1 {
+    padding: 16px;
+    font-size: clamp(3rem, 2.857rem + 0.714vw, 3.5rem);
+
+    font-weight: 800;
+    color: white;
+}
+
+.GalleryList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.GalleryCard {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    transition: border-color 0.4s ease;
+    cursor: pointer;
+}
+
+.GalleryCard:hover {
+    border-color: rgba(255, 255, 255, 0.605);
+    transition: border-color 0.4s ease;
+}
+
+.GalleryCard:hover .GalleryThumbnail {
+    transform: scale(1.08);
+    transition: transform 0.3s ease;
+}
+
+.GalleryThumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.LightboxOverlay {
+    width: 690px;
     justify-self: center;
     align-self: center;
     padding: 56px 64px;
     border: none;
     border-radius: 40px;
     background-color: var(--main-color);
+    box-shadow: 1px 1px 20px 0px rgba(253, 251, 251, 0.135);
+    overflow: hidden;
     color: white;
+
 }
 
-.lightboxContent {
+.LightboxOverlay::backdrop {
+    backdrop-filter: blur(1px);
+}
+
+.LightboxContent {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 48px;
 }
 
-.dialogHeader {
+.DialogHeader {
     display: flex;
     justify-content: space-between;
     font-size: 24px;
@@ -114,13 +189,13 @@ body {
     font-size: 20px;
 }
 
-.lightboxImage {
-    width: 560px;
+.LightboxImage {
+    width: 100%;
     height: 350px;
     object-fit: cover;
 }
 
-.lightboxControls {
+.LightboxControls {
     width: 250px;
     display: flex;
     justify-content: space-between;
@@ -128,69 +203,38 @@ body {
     align-items: center;
 }
 
-.lightboxButton {
+.LightboxButton {
     width: 50px;
     height: 50px;
     border: none;
     border-radius: 50%;
+    background-color: rgba(253, 91, 79, 0.185);
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+
+    cursor: pointer;
+}
+
+.LightboxButton:hover {
     background-color: rgba(253, 91, 79, 0.326);
     font-size: 24px;
     color: rgba(253, 91, 79, 1);
-
 }
 
-.lightboxCounter {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-main {
-    /* min-height: 100vh; */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 max(50% - 585px);
-
-}
-
-.mainSection {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
-    gap: 80px;
-
-
-}
-
-.mainSection h1 {
-    font-size: 56px;
-    font-weight: 800;
+.LightboxButton:active,
+.LightboxButton.is-active {
+    background-color: rgba(253, 91, 79, 0.658);
     color: white;
 }
 
-.galleryList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    gap: 16px;
-
+.LightboxCounter {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px;
 }
 
-.galleryThumbnail {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 16px;
-}
-
-.siteFooter {
+.SiteFooter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,18 +242,32 @@ main {
     border-top-right-radius: 90% 100px;
 }
 
-.footerContainer {
+.FooterContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-self: center;
     gap: 16px;
-
 }
 
-.copyrightText {
+.CopyrightText {
     font-size: 14px;
     font-weight: 400;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .SiteHeader {
+        justify-content: center;
+    }
+
+    .LogoContainer img {
+        width: 30px;
+    }
+
+    .LightboxOverlay {
+        padding: 32px 16px;
+    }
+
 }

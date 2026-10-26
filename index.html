@@ -5,47 +5,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fotogram</title>
+  <link rel="icon" href="./icons/fotogramLogo.svg">
+  
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body onkeydown="handleGlobalKeyDown(event)">
-  <header class="siteHeader">
-    <div class="logoContainer">
-      <img class="logoIcon" src="./icons/fotogramLogo.svg" alt="Fotogram Logo Icon">
-      <span class="logoTitel">Fotogram</span>
+  <header class="SiteHeader">
+    <div class="LogoContainer">
+      <img src="./icons/fotogramLogo.svg" alt="Fotogram Logo Icon">
+      <span class="LogoTitel">Fotogram</span>
     </div>
   </header>
 
   <main>
-    <section class="mainSection" aria-labelledby="albumTitle">
-      <h1 id="albumTitle" class="albumTitle">America's biggest National Parks</h1>
-      <ul id="galleryList" class="galleryList"></ul>
+    <section class="MainSection" aria-labelledby="albumTitle">
+      <h1 id="albumTitle">America's biggest National Parks</h1>
+      <ul id="galleryList" class="GalleryList"></ul>
     </section>
   </main>
 
-  <dialog id="lightboxDialog" class="lightboxOverlay" onclick="closeLightboxOnOverlay(event)">
-    <div id="lightboxContent" class="lightboxContent">
-      <div id="dialogHeader" class="dialogHeader">
-        <p id="imageTitle" class="imageTitle">Wrangell-St. Elias (Alaska)</p>
-        <button id="closeButton" class="lightboxButton closeButton" onclick="closeLightbox()">X</button>
+  <dialog id="lightboxDialog" class="LightboxOverlay" aria-labelledby="imageTitle" onclick="closeLightbox(event)">
+    <div id="lightboxContent" class="LightboxContent">
+      <div id="dialogHeader" class="DialogHeader">
+        <p id="imageTitle">Wrangell-St. Elias (Alaska)</p>
+        <button id="closeButton" class="LightboxButton closeButton" aria-label="close dialog" onclick="closeLightbox()">X</button>
       </div>
 
-      <figure id="lightboxFigure" class="lightboxFigure">
-        <img id="lightboxImage" class="lightboxImage" src="./images/wrangellStElias.jpg" alt="A scenic mountain and glacier view of Wrangell-St. Elias National Park in Alaska.">
+      <figure id="lightboxFigure" aria-describedby="imageTitle">
+        <img id="lightboxImage" class="LightboxImage" src="./images/wrangellStElias.jpg" alt="A scenic mountain and glacier view of Wrangell-St. Elias National Park in Alaska.">
       </figure>
 
-      <div class="lightboxControls">
-        <button class="lightboxButton prevButton" onclick="navigateLightbox(-1)">⬅</button>
-        <span id="lightboxCounter" class="lightboxCounter">1/12</span>
-        <button class="lightboxButton nextButton" onclick="navigateLightbox(1)">⮕</button>
+      <div class="LightboxControls">
+        <button class="LightboxButton prevButton " onclick="navigateLightbox(-1)">⬅</button>
+        <span id="lightboxCounter" class="LightboxCounter">1/12</span>
+        <button class="LightboxButton nextButton" onclick="navigateLightbox(1)">⮕</button>
       </div>
     </div>
   </dialog>
 
-  <footer class="siteFooter">
-    <div class="footerContainer">
+  <footer class="SiteFooter">
+    <div class="FooterContainer">
       <img src="./icons/daLogo.svg" alt="Developer Akademie Logo" class="footerLogo">
-      <p class="copyrightText">&copy; 2026 Developer Akademie GmbH</p>
+      <p class="CopyrightText">&copy; 2026 Developer Akademie GmbH</p>
     </div>
   </footer>
 
