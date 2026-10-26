@@ -8,7 +8,7 @@ const NAVIGATE_PREVIOUS = -1;
 const NAVIGATE_NEXT = 1;
 
 const IMAGES_DATA = [
-  { src: "./images/wrangellStElias.jpg", alt: "A scenic mountain and glacier view of Wrangell-St. Elias National Park in Alaska.", caption: "Wrangell-St. Elias (Alaska)" },
+  { src: "./images/wrangellStElias.jpg", alt: "A scenic mountain and glacier view of Wrangell-St. Elias National Park in Alaska.", caption: "Wrangell-St. Elias (Alaska)"},
   { src: "./images/gatesOfTheArctic.jpg", alt: "Untouched wilderness with grand rivers and dramatic mountain peaks in Gates of the Arctic National Park in Alaska.", caption: "Gates of the Arctic (Alaska)" },
   { src: "./images/denali.jpg", alt: "The snow-covered peak of Mount Denali rising above the vast autumn tundra in Denali National Park in Alaska.", caption: "Denali (Alaska)" },
   { src: "./images/katmai.jpg", alt: "Wild brown bears catching salmon at a rushing waterfall in Katmai National Park in Alaska.", caption: "Katmai (Alaska)" },
@@ -28,7 +28,7 @@ function renderGalleryItem(image, index) {
   return `
     <li class="GalleryItem">
       <figure class="GalleryCard" onclick="openLightbox(${index})">
-        <img class="GalleryThumbnail" src="${image.src}" alt="${image.alt}">
+        <img class="GalleryThumbnail" src="${image.src}" alt="${image.alt}" tabindex="1">
       </figure>
     </li>
   `;
